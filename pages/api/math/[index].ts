@@ -1,14 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
-import mathdata from '../../../components/mathdata.ts'
+import mathdata from '../../../components/mathdata'
 
 
 export default async function(req: any, res: any) {
 
-  const index :Integer = req.query.index;
+  const index = req.query.index;
 
-  const retrievedIndex :Integer = await mathdata(index);
+  const retrievedIndex = await mathdata(index);
 
   //console.log(retrievedIndex);
 

@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 
 
 
-export default async function(ind :Integer) :Integer {
+export default async function(ind :any) {
 
 
 
