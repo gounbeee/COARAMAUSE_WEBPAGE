@@ -12,7 +12,7 @@ export default async function(req: any, res: any) {
 
   //console.log(retrievedIndex);
 
-  const filePath = path.join(process.cwd(), `/public/images/${retrievedIndex}.mjpeg`);
+  const filePath = path.join(process.cwd(), `/public/images/${retrievedIndex}.gif`);
   //console.log(filePath);
 
 
@@ -21,7 +21,7 @@ export default async function(req: any, res: any) {
 
     const imageBuffer = fs.readFileSync(filePath);
 
-    res.setHeader('Content-Type', 'image/jpeg');
+    res.setHeader('Content-Type', 'image/gif');
 
     res.send(imageBuffer);
 
