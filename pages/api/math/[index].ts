@@ -14,6 +14,9 @@ export default async function(req: any, res: any) {
 
   const filePath = path.join(process.cwd(), `/public/images/${retrievedIndex}.gif`);
   //console.log(filePath);
+  var stats = fs.statSync(filePath);
+  var fileSizeInBytes = stats.size;
+
 
 
   try {
@@ -22,6 +25,7 @@ export default async function(req: any, res: any) {
     const imageBuffer = fs.readFileSync(filePath);
 
     res.setHeader('Content-Type', 'image/gif');
+    res.setHeader('Content-Length', fileSizeInBytes);
 
     res.send(imageBuffer);
 
